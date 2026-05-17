@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── arif brand palette ───────────────────────────── */
+    --bg-primary:       #FDF6EE;
+    --bg-secondary:     #F0F7F4;
+    --bg-accent:        #FEF3C7;
+    --color-primary:    #1C1917;
+    --color-secondary:  #78716C;
+    --color-brand:      #F97316;
+    --color-brand-soft: #FED7AA;
+    --border-color:     #E8DDD4;
+    --card-bg:          #FFFFFF;
+    --input-bg:         #FFFFFF;
+
+    /* ── shadcn/ui tokens (warm-mapped) ──────────────── */
+    --background: 33 89% 96%;
+    --foreground: 20 9% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 9% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 9% 10%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 30% 95%;
+    --secondary-foreground: 20 9% 10%;
+    --muted: 33 50% 94%;
+    --muted-foreground: 20 4% 45%;
+    --accent: 48 96% 89%;
+    --accent-foreground: 20 9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 24 29% 87%;
+    --input: 24 29% 87%;
+    --ring: 24 95% 53%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 9% 10%;
+    --foreground: 0 0% 98%;
+    --card: 20 9% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 20 9% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 4% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 20 4% 18%;
+    --muted-foreground: 20 4% 60%;
+    --accent: 20 4% 18%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 4% 22%;
+    --input: 20 4% 22%;
+    --ring: 24 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    background-color: var(--bg-primary);
+    color: var(--color-primary);
+  }
+}
+
+@keyframes shimmer-text {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary) 0%,
+    var(--color-secondary) 35%,
+    var(--color-brand)     50%,
+    var(--color-secondary) 65%,
+    var(--color-secondary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-text 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes border-glow {
+  0%, 100% { box-shadow: 0 0 0 2px var(--color-brand-soft); }
+  50%       { box-shadow: 0 0 0 2px var(--color-brand); }
+}
+
+.clarifying-ring {
+  border-radius: 9999px;
+  animation: border-glow 2s linear infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50%       { opacity: 1; transform: scale(1);   }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes mic-scale {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.15); }
+}
+
+@keyframes mic-ring {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 0.2; }
+}

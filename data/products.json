@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1001",
+    "title": "Porselen Japon Demlik - Tahta Kulplu Çay Demleme Seti",
+    "description": "El yapımı porselen gövdeli, doğal bambu kulplu Japon tarzı demlik. İnce cidarlı porselen yapısı çayın aromasını korur. Bambu kulp ısıya dayanıklı olup tutması kolaydır. Süzgeci dahildir.",
+    "features": [
+      "Materyal: Porselen (gövde), Bambu (kulp)",
+      "Hacim: 600 ml",
+      "Renk: Krem beyaz",
+      "Stil: Japon",
+      "Kullanım: Çay demleme"
+    ],
+    "category_path": ["Ev ve Mobilya", "Sofra & Mutfak", "Çay ve Kahve Demleme", "Demlik"],
+    "category": "demlik & çaydanlık",
+    "brand": "ArtisanHome",
+    "price_try": 649.90,
+    "rating": 4.7,
+    "review_count": 312,
+    "source": {
+      "site": "common",
+      "url": "",
+      "collected_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "1002",
+    "title": "Retro Bakır El Kahve Değirmeni - Manuel Öğütme",
+    "description": "Geleneksel tasarımdan ilham alan, bakır kaplamalı gövdesiyle vintage görünümlü manuel kahve değirmeni. Seramik öğütme mekanizması kahve çekirdeklerini düzgün ve tutarlı şekilde öğütür. Ahşap tutma yeri ergonomik kavramayı kolaylaştırır.",
+    "features": [
+      "Materyal: Bakır kaplama (gövde), Seramik (öğütme mekanizması)",
+      "Stil: Vintage / Retro",
+      "Mekanizma: Manuel, el ile çevirme",
+      "Öğütür: Kahve, baharat",
+      "Temizlik: Sökülebilir parçalar"
+    ],
+    "category_path": ["Ev ve Mobilya", "Sofra & Mutfak", "Kahve Aksesuarları"],
+    "category": "sofra ve mutfak",
+    "brand": "CopperCraft",
+    "price_try": 849.00,
+    "rating": 4.5,
+    "review_count": 187,
+    "source": {
+      "site": "common",
+      "url": "",
+      "collected_at": "2026-01-01T00:00:00Z"
+    }
+  }
+]
