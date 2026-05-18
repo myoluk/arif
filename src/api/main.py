@@ -71,6 +71,12 @@ def _clarify_response(session_id: str, question: str) -> SearchResponse:
     return SearchResponse(session_id=session_id, status="clarifying", question=question)
 
 
+@app.on_event("startup")
+async def startup_event():
+    from src.agents.matcher import _get_model
+    _get_model()
+
+
 @app.get("/health")
 def health():
     return {"status": "ok", "service": "arif-api"}
