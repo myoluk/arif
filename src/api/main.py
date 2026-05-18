@@ -3,11 +3,14 @@ import base64
 from pathlib import Path
 from typing import Annotated
 
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from langgraph.types import Command
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 IMAGES_DIR = Path(__file__).parent.parent.parent / "data" / "images"
 
@@ -16,7 +19,11 @@ from src.graph import build_graph
 from src.state import initial_state
 from src.api.session import checkpointer, create_session, session_exists, thread_config
 
-app = FastAPI(title="arif API", version="0.1.0", description="agentic retrieval with intelligent feedback")
+limiter = Limiter(key_func=get_remote_address)
+
+app = FastAPI(title="arif API", version="0.1.0", description="Agentic Retrieval with Intelligent Feedback")
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
@@ -80,7 +87,9 @@ def get_image(filename: str):
 
 
 @app.post("/search", response_model=SearchResponse)
+@limiter.limit("10/minute")
 async def search(
+    request: Request,
     user_input: Annotated[str, Form(max_length=200)] = "",
     image: UploadFile | None = File(None),
 ):
@@ -105,7 +114,8 @@ async def search(
 
 
 @app.post("/answer", response_model=SearchResponse)
-def answer(body: AnswerRequest):
+@limiter.limit("10/minute")
+def answer(request: Request, body: AnswerRequest):
     """Resumes a paused session with the user's answer; returns next question or results."""
     if not session_exists(body.session_id):
         raise HTTPException(status_code=404, detail="Session not found or expired")
