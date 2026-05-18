@@ -171,7 +171,7 @@ arif/
 
 - Python 3.11+
 - Node.js 18+
-- Elasticsearch 9.x ([indirme](https://www.elastic.co/downloads/elasticsearch))
+- Elasticsearch 9.x ([indir](https://www.elastic.co/downloads/elasticsearch))
 - Gemini API anahtarı ([ücretsiz alın](https://aistudio.google.com/api-keys))
 
 ### 1. Klonla ve kur
@@ -286,8 +286,7 @@ npm run dev
 ```bash
 # Arama başlat
 curl -X POST http://localhost:8000/search \
-  -H "Content-Type: application/json" \
-  -d '{"user_input": "tahta kulplu japon demlik"}'
+  -F "user_input=tahta kulplu japon demlik"
 
 # Netleştirme gerektiğinde yanıt:
 # {"session_id": "...", "status": "clarifying", "question": "Gövdesi porselen mi?"}
