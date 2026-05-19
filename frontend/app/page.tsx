@@ -39,11 +39,11 @@ const INITIAL_STATE: State = {
 };
 
 const EXAMPLES = [
-  "Tahta kulplu japon demlik",
-  "Eskiden annem kahve öğütürdü, o alet",
+  "Kağıtları dosyalamak için delen alet",
+  "Eskiden annem bir alet ile kahve çekirdeğini toz haline getirirdi",
   "İlkokulda kullandığım boncuklu hesap aleti",
   "Arkadaşımın evinde gördüğüm retro lamba",
-  "Koşu için mavi spor ayakkabı 42 numara",
+  "Koşu için mavi turuncu spor ayakkabı 42 numara",
 ];
 
 const PROGRESS_MSGS_TEXT  = ["Tarif analiz ediliyor...",             "Ürünler arasında geziniyorum...", "En iyi eşleşmeler sıralanıyor..."];
@@ -56,7 +56,7 @@ const RESULT_MSGS = [
   "Aradığına en yakın seçenekleri sıraladım.",
   "İşte aradığına en yakın ürünler.",
   "Aramanı tamamladım, işte sonuçlar.",
-  "En iyi eşleşmeleri hazırladım, buyur.",
+  "En iyi eşleşmeleri hazırladım, işte o ürünler.",
 ];
 
 // Shared between the search and clarifying screens for visual consistency.
