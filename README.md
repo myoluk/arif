@@ -1,6 +1,14 @@
 # ✨ arif (agentic retrieval with intelligent feedback)
 
-> "Arife tarif gerekmez" - tarif edemeyeni de **arif** anlar.
+> A multi-agent reverse search engine for e-commerce.
+
+**arif**, e-ticaret için çok ajanlı bir yapay zeka arama motorudur. Kullanıcılar tam olarak ne aradıklarını bilmeseler bile, ürünü doğal dille tarif ederek ya da fotoğraf yükleyerek arama yapabilirler. **arif** anlar, gerektiğinde netleştirici sorular sorar ve en uygun ürünleri bulur.
+
+
+## Demo
+
+https://github.com/user-attachments/assets/f4500d43-f699-4395-a91a-eb00f2634bd9
+
 
 ## İçindekiler
 
@@ -16,9 +24,6 @@
 - [Dataset](#dataset)
 - [Özelleştirme](#özelleştirme)
 
-**arif**, e-ticaret için çok ajanlı bir yapay zeka arama motorudur. Kullanıcılar tam olarak ne aradıklarını bilmeseler bile, ürünü doğal dille tarif ederek ya da fotoğraf yükleyerek arama yapabilirler. **arif** anlar, gerektiğinde netleştirici sorular sorar ve en uygun ürünleri bulur.
-
----
 
 ## arif'i farklı kılan ne?
 
@@ -35,7 +40,6 @@ Geleneksel arama motorları kullanıcının tam kelimeyi bilmesini gerektirir. *
 | 📸 Görsel | Desteklenmiyor | Fotoğraftan arama yapılabilir |
 | 🔊 Ses | Desteklenmiyor | Sesli tarif ile arama yapılabilir |
 
----
 
 ## Demo senaryoları
 
@@ -80,7 +84,6 @@ Kullanıcı : "Manueldi, bakırdan retro bir görünümü vardı"
 arif      : [Manuel bakır kahve değirmeni sonuçları]
 ```
 
----
 
 ## Mimari
 
@@ -125,7 +128,6 @@ arif      : [Manuel bakır kahve değirmeni sonuçları]
 
 `ClarifierAgent <-> ConceptExtractor` döngüsü temel agentic davranışı oluşturur. Sistem, arama yapmak için yeterli bilgiye sahip olup olmadığına otonom olarak karar verir ve belirsizliği gidermek için hedefli sorular sorar.
 
----
 
 ## Teknoloji yığını
 
@@ -140,7 +142,6 @@ arif      : [Manuel bakır kahve değirmeni sonuçları]
 | Frontend | Next.js 14 + TypeScript + Tailwind CSS + shadcn/ui |
 | Ses | Web Speech API (STT + TTS, tarayıcı native) |
 
----
 
 ## Proje yapısı
 
@@ -163,7 +164,6 @@ arif/
 └── .env.example
 ```
 
----
 
 ## Kurulum
 
@@ -270,7 +270,6 @@ npm run dev
 | Geliştirme | `dev` | Gemini 2.5 Flash-Lite | Gemini ile hızlı iterasyon |
 | Test | `test` | Gemini 2.5 Flash + Pro | Üretim kalitesi çıktı |
 
----
 
 ## API referansı
 
@@ -300,7 +299,6 @@ curl -X POST http://localhost:8000/answer \
 # {"session_id": "...", "status": "results", "results": [...]}
 ```
 
----
 
 ## Agentic döngü nasıl çalışır?
 
@@ -311,26 +309,22 @@ curl -X POST http://localhost:8000/answer \
 5. **MarketplaceMatcher**, son tarifi Trendyol embedding modeli ile kodlar ve kNN araması yapar.
 6. **ResultRanker**, sonuçları kullanıcı niyetine göre yeniden sıralar ve her ürün için Türkçe gerekçe ekler.
 
----
 
 ## Dataset
 
 Ürünler 10 kategori genelinde manuel olarak toplanmıştır:
 
-| Kategori | İçerik |
-|---|---|
-| Demlik & çaydanlık | Demlik, çaydanlık takımları |
-| Spor ayakkabı | Koşu, basketbol, sneaker |
-| Sofra ve mutfak | Mutfak el aletleri |
-| Aydınlatma | Masa lambası, abajur, lambader |
-| Ev tekstili | Yastık, battaniye, örtü |
-| Oyuncak | Klasik, ahşap, eğitici oyuncaklar |
-| Elektrikli ev aletleri | Mikser, blender, su ısıtıcı |
-| Kişisel bakım | Saç bakım, cilt bakım ürünleri |
-| Ev dekor | Vazo, çerçeve, biblo |
-| Ofis/kırtasiye | Defter, kalem, masa organizatörü |
+- `Demlik & çaydanlık`
+- `Spor ayakkabı`
+- `Sofra ve mutfak`
+- `Aydınlatma`
+- `Ev tekstili`
+- `Oyuncak`
+- `Elektrikli ev aletleri`
+- `Kişisel bakım`
+- `Ev dekor`
+- `Ofis/kırtasiye`
 
----
 
 ## Özelleştirme
 
