@@ -18,17 +18,17 @@
 
 **arif**, e-ticaret için çok ajanlı bir yapay zeka arama motorudur. Kullanıcılar tam olarak ne aradıklarını bilmeseler bile, ürünü doğal dille tarif ederek ya da fotoğraf yükleyerek arama yapabilirler. **arif** anlar, gerektiğinde netleştirici sorular sorar ve en uygun ürünleri bulur.
 
-[BTK Akademi Hackathon 2026](https://www.btkakademi.gov.tr) - e-ticaret konsepti için geliştirilmiştir.
-
 ---
 
 ## arif'i farklı kılan ne?
 
 Geleneksel arama motorları kullanıcının tam kelimeyi bilmesini gerektirir. **arif** bunu tersine çevirir:
 
+![Geleneksel Arama ve arif Karşılaştırması](assets/comparison.png)
+
 | | 🔍 Geleneksel Arama | ✨ arif |
 |---|---|---|
-| 🔤 Girdi | "abaküs" | "İlkokulda kullandığımız eski bir hesaplama aleti vardı, boncuklu" |
+| 🔤 Girdi | "delgeç" | "Kağıtları dosyalamak için delen alet" |
 | 🧠 Anlama | Anahtar kelime eşleştirme | Doğal dil anlama |
 | 📖 Gereksinim | Kullanıcı ürün adını bilmeli | Kullanıcı ne hatırladığını tarif eder |
 | 💬 Etkileşim | Tek seferlik sorgu | Belirsizliği gideren diyalog |
