@@ -7,7 +7,7 @@
 
 ## Demo
 
-https://github.com/user-attachments/assets/f4500d43-f699-4395-a91a-eb00f2634bd9
+https://github.com/user-attachments/assets/f6c3057b-df20-4ce6-bec0-e663fe4291ab
 
 
 ## İçindekiler
